@@ -6,8 +6,14 @@ public enum RxBluetoothKitLogger {
     public static var defaultLogger: Logger = SimplePrintLogger()
 }
 
-private class SimplePrintLogger: Logger {
-    private var currentLogLevel: RxBluetoothKitLog.LogLevel = .none
+public class SimplePrintLogger: Logger {
+
+    public var logMessage: ((() -> String,
+                            RxBluetoothKitLog.LogLevel,
+                            String,
+                            String,
+                            UInt) -> ())? = nil
+    private var currentLogLevel: RxBluetoothKitLog.LogLevel = .verbose
 
     /// Set new log level.
     /// - Parameter logLevel: New log level to be applied.
@@ -21,7 +27,7 @@ private class SimplePrintLogger: Logger {
         return currentLogLevel
     }
 
-    func log(
+    public func log(
         _ message: @autoclosure () -> String,
         level: RxBluetoothKitLog.LogLevel,
         file: StaticString,
@@ -37,7 +43,7 @@ private class SimplePrintLogger: Logger {
         )
     }
 
-    func log(
+    public func log(
         _ message: @autoclosure () -> String,
         level: RxBluetoothKitLog.LogLevel,
         file: String,
@@ -46,6 +52,9 @@ private class SimplePrintLogger: Logger {
     ) {
         if currentLogLevel <= level {
             print("\(tag(with: level)) \(message())")
+            if let logMessage = self.logMessage {
+                logMessage(message, level, file, function, line)
+            }
         }
     }
 
