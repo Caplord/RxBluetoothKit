@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = "https://github.com/Caplord/RxBluetoothKit"
   s.license          = 'Apache License, Version 2.0.'
-  s.author           = { "Przemysław Lenart" => "przemek.lenart@polidea.com", "Kacper Harasim" => "kacper.harasim@polidea.com", "Michał Laskowski" => "michal.laskowski@polidea.com", "Paweł Janeczek" => "pawel.janeczek@polidea.com", "Bartosz Stelmaszuk" => "bartosz.stelmaszuk@polidea.com", "Erwan Masson" => "erwan.masson@openfleet.com" }
+  s.author           = { "Przemysław Lenart" => "przemek.lenart@polidea.com", "Kacper Harasim" => "kacper.harasim@polidea.com", "Michał Laskowski" => "michal.laskowski@polidea.com", "Paweł Janeczek" => "pawel.janeczek@polidea.com", "Bartosz Stelmaszuk" => "bartosz.stelmaszuk@polidea.com", "Erwan Masson" => "erwan.masson@openfleet.com" , "Besma Kaouane" => "besma.kaouane@openfleet.com" }
   s.source           = { :git => "https://github.com/Caplord/RxBluetoothKit.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/Erwan_Masson'
 
