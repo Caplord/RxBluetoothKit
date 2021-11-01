@@ -13,7 +13,7 @@ public class SimplePrintLogger: Logger {
                             String,
                             String,
                             UInt) -> ())? = nil
-    private var currentLogLevel: RxBluetoothKitLog.LogLevel = .verbose
+    private var currentLogLevel: RxBluetoothKitLog.LogLevel = .error
 
     /// Set new log level.
     /// - Parameter logLevel: New log level to be applied.

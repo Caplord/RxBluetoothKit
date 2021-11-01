@@ -85,7 +85,7 @@ public class RxBluetoothKitLog: ReactiveCompatible {
         log(with: .info, message: message(), file: file, function: function, line: line)
     }
 
-    static func w(
+    public static func w(
         _ message: @autoclosure () -> String,
         file: StaticString = #file,
         function: StaticString = #function,
